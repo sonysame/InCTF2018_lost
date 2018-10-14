@@ -11,10 +11,12 @@ pwnable
 0x602120 sema
 
 
+
 run
 
 sem_post(&sema)->sema=1
 sem_wait(&sema)->sema=0
+
 
 
 
@@ -30,6 +32,7 @@ pthread_join(newthread, 0)
 
         그래서 이 문제에서는 chunk=2라면 쓰레드로 run을 한번 실행시키고 main함수에서 run을 실행시킨다.
         그리고 pthread_join에서 thread가 종료되는걸 기다린다.
+
 
 sema!
 
