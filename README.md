@@ -14,7 +14,6 @@ pwnable
 run
 
 sem_post(&sema)->sema=1
-
 sem_wait(&sema)->sema=0
 
 
