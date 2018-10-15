@@ -1,14 +1,14 @@
 # InCTF2018_lost
 
-pwnable, semaphore 
+\#pwnable, \#semaphore 
 
-###bss part  
+### bss part  
 0x6020f0 ptr->data가 들어간다.  
 0x6020f8 author<-새로 할당받고 그 주소를 0x6020f8에  
 0x602100 size  
 0x602120 sema
 
-###semaphore  
+### semaphore  
 run들어가기이전에: sema_init(&sema, 0, 1);  
 run내부에서: 시작할 때->sem_wait(&sema);  
 끝날 때->sem_post(&sema);
@@ -17,11 +17,11 @@ run내부에서: 시작할 때->sem_wait(&sema);
 2. sem_post: Increment a semaphore
 3. sem_wait: Block on a semaphore count
 
-####ex)  
+#### ex)  
 sem_post(&sema)->sema=1  
 sem_wait(&sema)->sema=0
 
-###thread  
+### thread  
 pthread_create(&newthread, 0, thread, 0)  //thread->return run  
 pthread_join(newthread, 0)  
 
