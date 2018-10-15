@@ -1,0 +1,13 @@
+all : semaphore
+
+semaphore: semaphore.o
+	g++ -g -o semaphore semaphore.o -lpthread
+
+sempaphore.o:
+	g++ -g -c -o semaphore.o semaphore.cpp
+
+clean:
+	rm -f semaphore
+	rm -f *.o
+
+
