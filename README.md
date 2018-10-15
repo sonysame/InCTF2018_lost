@@ -1,6 +1,6 @@
 # InCTF2018_lost
 
-\#pwnable, \#semaphore 
+\#pwnable \#semaphore 
 
 ### bss part  
 0x6020f0 ptr->data가 들어간다.  
