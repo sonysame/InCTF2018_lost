@@ -1,10 +1,10 @@
 all : pthread_create
 
-pthread_create: main.o
-	g++ -g -o pthread_create main.o -lpthread
+pthread_create: pthread_create.o
+	g++ -g -o pthread_create pthread_create.o -lpthread
 
-main.o:
-	g++ -g -c -o main.o main.cpp
+pthread_create.o:
+	g++ -g -c -o pthread_create.o pthread_create.cpp
 
 clean:
 	rm -f pthread_create
