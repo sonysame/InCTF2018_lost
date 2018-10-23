@@ -32,3 +32,15 @@ pthread_join(newthread, 0)
 그래서 이 문제에서는 chunk=2라면 쓰레드로 run을 한번 실행시키고 main함수에서 run을 실행시킨다.
 그리고 pthread_join에서 thread가 종료되는걸 기다린다.
 
+
+<hr/>
+run function has alarm(4)->signal(14, sig)  
+sig(sem_post & sem_wait)  
+
+**Race condition** in "alloc" when the context switch between threads is taking place.
+
+in thread1, after the malloc(size) statement is executed, if we wait for 4 seconds, then thread2 begins execution. Now we give the size values as any integer over 1000, and again wait for 4 seconds so the control is passed back to thread1. Notice that in thread2, since the control never came out of the while loop, th ptr pointer was never reset, while now the size has been updated to a large value. So in thread1, in getinp(ptr, size) statement, we have a huge heap overflow. 
+
+it means that after 4 seconds each thred times out!
+
+
